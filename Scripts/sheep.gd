@@ -13,22 +13,22 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
-	var direction := Input.get_axis("jump", "nothing")
-	print(direction)
+	# while !Input.is_action_pressed("jump"):
+	# 	velocity.y = 1
+
 	# Handle jump.
 	if Input.is_action_just_pressed("jump"):
 		velocity.y = JUMP_VELOCITY
-
+		update_animation(true)
+	if Input.is_action_just_released("jump"):
+		update_animation(false)
 	
-
-	velocity.x = SPEED
-	
-	update_animation(direction)
 	move_and_slide()
 
-func update_animation(dir) -> void:
-	if dir == -1:
+	# Animate the sheep.
+func update_animation(jumping : bool) -> void:
+	if jumping:
 		animation_player.play("jump")
-	elif dir == 0:
+	else:
 		animation_player.play("idle")
 
