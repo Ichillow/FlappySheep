@@ -13,3 +13,4 @@ func spawn_barrier():
 	var barrier =  barrier_scene.instantiate() # Crée un nouveau tuyau
 	barrier.position = Vector2(800, randf_range(-578, -146))  # Position aléatoire en hauteur
 	get_parent().add_child(barrier)  # Ajoute le tuyau à la scène
+	

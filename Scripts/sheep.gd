@@ -17,10 +17,10 @@ func _physics_process(delta: float) -> void:
 	# 	velocity.y = 1
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump") or InputEventMouseButton:
 		velocity.y = JUMP_VELOCITY
 		update_animation(true)
-	if Input.is_action_just_released("jump"):
+	if Input.is_action_just_released("jump") or Input.is_action_just_released("mouse_jump"):
 		update_animation(false)
 	
 	move_and_slide()

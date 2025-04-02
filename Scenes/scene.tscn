@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0qfof36gie2s"]
+[gd_scene load_steps=10 format=3 uid="uid://d0qfof36gie2s"]
 
 [ext_resource type="PackedScene" uid="uid://bqy2b2hlkhsl4" path="res://Scenes/characters/sheep.tscn" id="1_fnl8x"]
 [ext_resource type="Texture2D" uid="uid://bgn6gr5vfqr3u" path="res://Assets/sheep_assets/sheep_assets_x4.png" id="2_f0npm"]
 [ext_resource type="Texture2D" uid="uid://bs0ywdv1ic7gg" path="res://Assets/sheep_assets/sheep_assets_x4_sans_bordure.png" id="3_ewrhn"]
 [ext_resource type="PackedScene" uid="uid://bqjae5onwnm1p" path="res://Scenes/barrier.tscn" id="4_wqac7"]
 [ext_resource type="PackedScene" uid="uid://ds4u0hah5mvx3" path="res://Scenes/barrier_spawner.tscn" id="5_qkelo"]
+[ext_resource type="PackedScene" uid="uid://8i10trunnqwm" path="res://Scenes/UI/ui.tscn" id="6_dpg8h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ikdx1"]
 texture = ExtResource("2_f0npm")
@@ -175,8 +176,8 @@ sources/1 = SubResource("TileSetAtlasSource_h8y1w")
 
 [node name="Scene" type="Node2D"]
 
-[node name="Sheep" parent="." instance=ExtResource("1_fnl8x")]
-position = Vector2(-334, 0)
+[node name="sheep" parent="." instance=ExtResource("1_fnl8x")]
+position = Vector2(-385, -8)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ij4vp")
@@ -189,9 +190,10 @@ layer_1/tile_data = PackedInt32Array(-524303, 65536, 0, -655379, 0, 0, -589843, 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.9, 0.9)
 
-[node name="barrier" parent="." instance=ExtResource("4_wqac7")]
-position = Vector2(586, -146)
-
 [node name="barrierSpawner" parent="." instance=ExtResource("5_qkelo")]
-position = Vector2(853, 6)
+position = Vector2(660, -2)
 barrier_scene = ExtResource("4_wqac7")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="UI" parent="." instance=ExtResource("6_dpg8h")]

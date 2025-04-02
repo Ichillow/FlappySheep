@@ -3,9 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://bs0ywdv1ic7gg" path="res://Assets/sheep_assets/sheep_assets_x4_sans_bordure.png" id="1_81mk3"]
 [ext_resource type="Script" path="res://Scripts/barrier.gd" id="1_bw726"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vnv2j"]
-size = Vector2(28, 1410)
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4rx0c"]
 texture = ExtResource("1_81mk3")
 texture_region_size = Vector2i(64, 64)
@@ -90,17 +87,15 @@ tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_4rx0c")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gf64m"]
-size = Vector2(28, 1657)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wbmp"]
+size = Vector2(21.625, 1405.56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q27to"]
+size = Vector2(20, 130.5)
 
 [node name="barrier" type="StaticBody2D"]
 position = Vector2(514, 24)
 script = ExtResource("1_bw726")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-z_index = 1
-position = Vector2(59, -429)
-shape = SubResource("RectangleShape2D_vnv2j")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-35, 24)
@@ -108,6 +103,26 @@ tile_set = SubResource("TileSet_ysbg7")
 format = 2
 layer_0/tile_data = PackedInt32Array(-262143, 327680, 1, -196607, 327680, 1, -131071, 327680, 1, -65535, 327680, 1, 1, 327680, 1, 65537, 327680, 1, 131073, 327680, 1, 458753, 327680, 1, 524289, 327680, 1, 589825, 327680, 1, 655361, 327680, 1, 720897, 327680, 1, 983041, 327680, 1, 1048577, 327680, 1, 917505, 327680, 1, 851969, 327680, 1, 786433, 327680, 1, 393217, 327680, 0, 196609, 327680, 2, -327679, 327680, 1, -393215, 327680, 1, -458751, 327680, 1, -524287, 327680, 1, -589823, 327680, 1, -655359, 327680, 1, -720895, 327680, 1, 1114113, 327680, 1, 1179649, 327680, 1, 1245185, 327680, 1, 1310721, 327680, 1, 1376257, 327680, 1, 1441793, 327680, 1, 1507329, 327680, 1, 1572865, 327680, 1, 1638401, 327680, 1, 1703937, 327680, 1, -786431, 327680, 1, -851967, 327680, 1, -917503, 327680, 1, -983039, 327680, 1, -1048575, 327680, 1, -1114111, 327680, 1, -1179647, 327680, 1, 1769473, 327680, 1, 1835009, 327680, 1, 1900545, 327680, 1, 1966081, 327680, 1, 2031617, 327680, 1)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(59, 1244.5)
-shape = SubResource("RectangleShape2D_gf64m")
+[node name="kill2" type="Area2D" parent="."]
+position = Vector2(55, -426)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kill2"]
+position = Vector2(-0.125, 0.0625)
+shape = SubResource("RectangleShape2D_1wbmp")
+
+[node name="kill1" type="Area2D" parent="."]
+position = Vector2(55, 1118)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kill1"]
+position = Vector2(-0.1875, -0.21875)
+shape = SubResource("RectangleShape2D_1wbmp")
+
+[node name="scoreGate" type="Area2D" parent="."]
+position = Vector2(55, 346)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scoreGate"]
+shape = SubResource("RectangleShape2D_q27to")
+
+[connection signal="body_entered" from="kill2" to="." method="_on_kill_2_body_entered"]
+[connection signal="body_entered" from="kill1" to="." method="_on_kill_1_body_entered"]
+[connection signal="body_entered" from="scoreGate" to="." method="_on_score_gate_body_entered"]
