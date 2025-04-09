@@ -1,0 +1,136 @@
+[gd_scene load_steps=5 format=3 uid="uid://4vck21l6kdvm"]
+
+[ext_resource type="FontFile" uid="uid://co7c821asl7wj" path="res://Assets/fonts/PixelOperator8.ttf" id="1_qeduo"]
+[ext_resource type="Texture2D" uid="uid://50x5ovyjruwy" path="res://Assets/Fantasy Minimal Pixel Art GUI by eta-commercial-free/UI/Button_52x14.png" id="2_fcq0r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0grs"]
+bg_color = Color(0.421293, 0.315442, 0.165384, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.283868, 0.207848, 0.0997866, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 0.121569)
+shadow_size = 5
+shadow_offset = Vector2(10, 10)
+
+[sub_resource type="Theme" id="Theme_xubeo"]
+Label/fonts/font = ExtResource("1_qeduo")
+Panel/styles/panel = SubResource("StyleBoxFlat_a0grs")
+
+[node name="mainMenu" type="CanvasLayer"]
+
+[node name="menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_xubeo")
+
+[node name="Panel" type="Panel" parent="menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.5
+offset_top = -155.5
+offset_right = 215.5
+offset_bottom = 155.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="menu/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 17.0
+offset_right = -17.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelTitle" type="Label" parent="menu/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "FlappySheep"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="menu/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="TextureButtonPlay" type="TextureButton" parent="menu/Panel/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_fcq0r")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="menu/Panel/VBoxContainer/TextureButtonPlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -8.0
+offset_right = 20.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PLAY"
+
+[node name="TextureButtonOption" type="TextureButton" parent="menu/Panel/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_fcq0r")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="menu/Panel/VBoxContainer/TextureButtonOption"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -8.0
+offset_right = 20.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "OPTION"
+
+[node name="TextureButtonQuit" type="TextureButton" parent="menu/Panel/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_fcq0r")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="menu/Panel/VBoxContainer/TextureButtonQuit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -8.0
+offset_right = 20.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "QUIT"
