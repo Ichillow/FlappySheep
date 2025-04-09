@@ -18,7 +18,7 @@ Le but est simple : fais sauter le mouton pour éviter les barrières et atteind
 
 - Génération automatique de barrières.
 - Système de score.
--Peut être des skins 👀.
+- Peut être des skins 👀.
 
 ---
 
