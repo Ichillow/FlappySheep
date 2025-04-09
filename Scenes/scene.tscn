@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0qfof36gie2s"]
+[gd_scene load_steps=11 format=3 uid="uid://d0qfof36gie2s"]
 
 [ext_resource type="PackedScene" uid="uid://bqy2b2hlkhsl4" path="res://Scenes/characters/sheep.tscn" id="1_fnl8x"]
 [ext_resource type="Texture2D" uid="uid://bgn6gr5vfqr3u" path="res://Assets/sheep_assets/sheep_assets_x4.png" id="2_f0npm"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bqjae5onwnm1p" path="res://Scenes/barrier.tscn" id="4_wqac7"]
 [ext_resource type="PackedScene" uid="uid://ds4u0hah5mvx3" path="res://Scenes/barrier_spawner.tscn" id="5_qkelo"]
 [ext_resource type="PackedScene" uid="uid://8i10trunnqwm" path="res://Scenes/UI/ui.tscn" id="6_dpg8h"]
+[ext_resource type="PackedScene" uid="uid://x3ywd788peu" path="res://Scenes/death_zone.tscn" id="6_s2rgd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ikdx1"]
 texture = ExtResource("2_f0npm")
@@ -194,6 +195,9 @@ zoom = Vector2(0.9, 0.9)
 position = Vector2(660, -2)
 barrier_scene = ExtResource("4_wqac7")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="deathZone" parent="." instance=ExtResource("6_s2rgd")]
+
+[node name="deathZone2" parent="." instance=ExtResource("6_s2rgd")]
+position = Vector2(1, -447)
 
 [node name="UI" parent="." instance=ExtResource("6_dpg8h")]

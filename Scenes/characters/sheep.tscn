@@ -80,3 +80,6 @@ shape = SubResource("RectangleShape2D_iwe08")
 libraries = {
 "": SubResource("AnimationLibrary_5iipr")
 }
+
+[node name="deathTimer" type="Timer" parent="."]
+one_shot = true

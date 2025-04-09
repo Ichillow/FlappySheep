@@ -8,10 +8,10 @@ script = ExtResource("1_fe41h")
 
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 42.0
-offset_bottom = 23.0
+offset_left = 558.0
+offset_top = 73.0
+offset_right = 593.0
+offset_bottom = 113.0
 theme_override_fonts/font = ExtResource("1_fggew")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 56
 text = "0"

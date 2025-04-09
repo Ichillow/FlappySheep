@@ -5,6 +5,7 @@ extends Node2D
 
 #onready
 @onready var timer: Timer = $Timer
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Timer.timeout.connect(Callable(self, "spawn_barrier"))  # Connecte le timer à la fonction de spawn
