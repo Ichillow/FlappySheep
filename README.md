@@ -32,7 +32,7 @@ Langage : **GDScript**
 ## 🎨 Sprites
 
 <ul>
-<li><a href=https://nmr9.itch.io/animated-sheep target="_blank">Animated sheep by <strong>NMR9</strong> </a> (avec modification de ma part sur les barrières).</li>
+<li><a href=https://nmr9.itch.io/animated-sheep target="_blank">Animated sheep by <strong>NMR9</strong> </a> (avec modification de ma part).</li>
 </ul>
   
 ---
