@@ -1,0 +1,222 @@
+[gd_scene load_steps=13 format=3 uid="uid://d0qfof36gie2s"]
+
+[ext_resource type="PackedScene" uid="uid://bqy2b2hlkhsl4" path="res://Scenes/characters/sheep.tscn" id="1_inqy5"]
+[ext_resource type="Texture2D" uid="uid://bgn6gr5vfqr3u" path="res://Assets/sheep_assets/sheep_assets_x4.png" id="2_hsw2k"]
+[ext_resource type="Texture2D" uid="uid://bs0ywdv1ic7gg" path="res://Assets/sheep_assets/sheep_assets_x4_sans_bordure.png" id="3_jiprc"]
+[ext_resource type="PackedScene" uid="uid://ds4u0hah5mvx3" path="res://Scenes/barrier_spawner.tscn" id="4_gys3b"]
+[ext_resource type="PackedScene" uid="uid://bqjae5onwnm1p" path="res://Scenes/barrier.tscn" id="5_fbmm2"]
+[ext_resource type="PackedScene" uid="uid://x3ywd788peu" path="res://Scenes/death_zone.tscn" id="6_yhugv"]
+[ext_resource type="PackedScene" uid="uid://8i10trunnqwm" path="res://Scenes/UI/ui.tscn" id="7_7a5bo"]
+[ext_resource type="Script" path="res://Scripts/first_background.gd" id="8_3drc4"]
+[ext_resource type="Texture2D" uid="uid://cxksyfqdsrag0" path="res://Assets/sheep_assets/background.png" id="8_dm8wu"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ikdx1"]
+texture = ExtResource("2_hsw2k")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+2:16/0 = 0
+3:16/0 = 0
+1:17/0 = 0
+2:17/0 = 0
+3:17/0 = 0
+0:18/0 = 0
+1:18/0 = 0
+2:18/0 = 0
+0:19/0 = 0
+1:19/0 = 0
+1:21/0 = 0
+2:21/0 = 0
+0:20/0 = 0
+1:20/0 = 0
+0:21/0 = 0
+2:15/0 = 0
+1:15/0 = 0
+0:15/0 = 0
+0:16/0 = 0
+1:16/0 = 0
+0:17/0 = 0
+2:11/0 = 0
+1:11/0 = 0
+0:11/0 = 0
+0:10/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+1:10/0 = 0
+1:8/0 = 0
+2:9/0 = 0
+1:7/0 = 0
+0:7/0 = 0
+0:8/0 = 0
+2:7/0 = 0
+1:6/0 = 0
+0:6/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+1:4/0 = 0
+0:4/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h8y1w"]
+texture = ExtResource("3_jiprc")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -24, 12, -24, 12, 32, -16, 32)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -32, 11.9692, -32, 12.1267, 32, -15.9065, 32)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -32, 12, -32, 12, 32, 12, 28, -16, 28)
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+0:16/0 = 0
+1:16/0 = 0
+0:17/0 = 0
+1:17/0 = 0
+2:17/0 = 0
+0:18/0 = 0
+1:18/0 = 0
+0:19/0 = 0
+1:19/0 = 0
+2:19/0 = 0
+0:20/0 = 0
+1:20/0 = 0
+0:21/0 = 0
+1:21/0 = 0
+2:21/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ij4vp"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_ikdx1")
+sources/1 = SubResource("TileSetAtlasSource_h8y1w")
+
+[node name="Scene" type="Node2D"]
+
+[node name="sheep" parent="." instance=ExtResource("1_inqy5")]
+position = Vector2(-207, -2)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_ij4vp")
+format = 2
+layer_0/name = "Main"
+layer_1/name = "Background"
+layer_1/z_index = -1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.9, 0.9)
+
+[node name="barrierSpawner" parent="." instance=ExtResource("4_gys3b")]
+position = Vector2(607, -2)
+barrier_scene = ExtResource("5_fbmm2")
+
+[node name="deathZone" parent="." instance=ExtResource("6_yhugv")]
+
+[node name="deathZone2" parent="." instance=ExtResource("6_yhugv")]
+position = Vector2(1, -447)
+
+[node name="UI" parent="." instance=ExtResource("7_7a5bo")]
+
+[node name="FirstBackground" type="CanvasLayer" parent="."]
+layer = -1
+script = ExtResource("8_3drc4")
+
+[node name="Sprite2D" type="Sprite2D" parent="FirstBackground"]
+scale = Vector2(1.475, 1.475)
+texture = ExtResource("8_dm8wu")
+
+[node name="SecondBackground" type="CanvasLayer" parent="."]
+layer = -1
+offset = Vector2(1595, 0)
+transform = Transform2D(1, 0, 0, 1, 1595, 0)
+script = ExtResource("8_3drc4")
+
+[node name="Sprite2D" type="Sprite2D" parent="SecondBackground"]
+scale = Vector2(1.475, 1.475)
+texture = ExtResource("8_dm8wu")

@@ -5,13 +5,19 @@ extends Node2D
 
 #onready
 @onready var timer: Timer = $Timer
+@onready var sheep: CharacterBody2D = $"../sheep"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Timer.timeout.connect(Callable(self, "spawn_barrier"))  # Connecte le timer à la fonction de spawn
+	timer.timeout.connect(spawn_barrier)
+
+func _process(_delta):
+	if Game.game_over and timer.is_stopped() == false:
+		timer.stop()
 
 func spawn_barrier():
-	var barrier =  barrier_scene.instantiate() # Crée un nouveau tuyau
-	barrier.position = Vector2(800, randf_range(-578, -146))  # Position aléatoire en hauteur
-	get_parent().add_child(barrier)  # Ajoute le tuyau à la scène
-	
+	if Game.game_over:
+		return  # Ne spawn pas si la partie est finie
+	var barrier = barrier_scene.instantiate()
+	barrier.position = Vector2(800, randf_range(-578, -146))
+	get_parent().add_child(barrier)
