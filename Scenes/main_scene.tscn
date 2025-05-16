@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d0qfof36gie2s"]
+[gd_scene load_steps=14 format=3 uid="uid://d0qfof36gie2s"]
 
 [ext_resource type="PackedScene" uid="uid://bqy2b2hlkhsl4" path="res://Scenes/characters/sheep.tscn" id="1_inqy5"]
 [ext_resource type="Texture2D" uid="uid://bgn6gr5vfqr3u" path="res://Assets/sheep_assets/sheep_assets_x4.png" id="2_hsw2k"]
@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bqjae5onwnm1p" path="res://Scenes/barrier.tscn" id="5_fbmm2"]
 [ext_resource type="PackedScene" uid="uid://x3ywd788peu" path="res://Scenes/death_zone.tscn" id="6_yhugv"]
 [ext_resource type="PackedScene" uid="uid://8i10trunnqwm" path="res://Scenes/UI/ui.tscn" id="7_7a5bo"]
-[ext_resource type="Script" path="res://Scripts/first_background.gd" id="8_3drc4"]
 [ext_resource type="Texture2D" uid="uid://cxksyfqdsrag0" path="res://Assets/sheep_assets/background.png" id="8_dm8wu"]
+[ext_resource type="Script" path="res://Scripts/UI/background.gd" id="8_l3vqj"]
+[ext_resource type="Script" path="res://Scripts/UI/background_2.gd" id="10_pxccl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ikdx1"]
 texture = ExtResource("2_hsw2k")
@@ -197,26 +198,26 @@ position = Vector2(607, -2)
 barrier_scene = ExtResource("5_fbmm2")
 
 [node name="deathZone" parent="." instance=ExtResource("6_yhugv")]
+position = Vector2(0, 421.73)
 
 [node name="deathZone2" parent="." instance=ExtResource("6_yhugv")]
 position = Vector2(1, -447)
 
 [node name="UI" parent="." instance=ExtResource("7_7a5bo")]
 
-[node name="FirstBackground" type="CanvasLayer" parent="."]
-layer = -1
-script = ExtResource("8_3drc4")
+[node name="Background" type="Node2D" parent="."]
+script = ExtResource("8_l3vqj")
 
-[node name="Sprite2D" type="Sprite2D" parent="FirstBackground"]
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+z_index = -1
 scale = Vector2(1.475, 1.475)
 texture = ExtResource("8_dm8wu")
 
-[node name="SecondBackground" type="CanvasLayer" parent="."]
-layer = -1
-offset = Vector2(1595, 0)
-transform = Transform2D(1, 0, 0, 1, 1595, 0)
-script = ExtResource("8_3drc4")
+[node name="Background2" type="Node2D" parent="."]
+position = Vector2(1595, 0)
+script = ExtResource("10_pxccl")
 
-[node name="Sprite2D" type="Sprite2D" parent="SecondBackground"]
+[node name="Sprite2D" type="Sprite2D" parent="Background2"]
+z_index = -1
 scale = Vector2(1.475, 1.475)
 texture = ExtResource("8_dm8wu")

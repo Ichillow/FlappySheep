@@ -4,8 +4,9 @@ var SPEED = 200
 
 @onready var ui: CanvasLayer = $"../UI"
 
+
 func _process(delta):
-	if Game.game_over:
+	if game.game_over:
 		return  # Ne bouge plus si la partie est finie
 	position.x -= SPEED * delta
 
@@ -21,8 +22,8 @@ func _on_kill_2_body_entered(body) -> void:
 		_handle_death(body)
 
 func _handle_death(body):
-	if not Game.game_over:
-		Game.game_over = true
+	if not game.game_over:
+		game.game_over = true
 		var death_timer = body.get_node("deathTimer")
 		if death_timer:
 			body.call_deferred("coll_off")
@@ -34,9 +35,7 @@ func _on_score_gate_body_entered(body: Node2D) -> void:
 	if body.name == "sheep":
 		ui.add_score(1)
 
-func _on_death_timer_timeout():
-	reload_scene()
 
-func reload_scene():
-	Game.game_over = false  # Reset pour la prochaine partie
-	get_tree().reload_current_scene()
+func _on_death_timer_timeout():
+	game.gameover()
+

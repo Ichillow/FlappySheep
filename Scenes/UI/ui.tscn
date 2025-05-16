@@ -14,4 +14,4 @@ offset_right = 593.0
 offset_bottom = 113.0
 theme_override_fonts/font = ExtResource("1_fggew")
 theme_override_font_sizes/font_size = 56
-text = "0"
+text = "ERROR"

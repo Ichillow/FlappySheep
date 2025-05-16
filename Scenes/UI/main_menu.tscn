@@ -192,7 +192,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "QUIT"
 
-[node name="Label" type="Label" parent="."]
+[node name="HighScore" type="Label" parent="."]
 texture_filter = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -204,8 +204,23 @@ offset_bottom = 73.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("6_xej1i")
 theme_override_font_sizes/font_size = 32
-text = "HighScore 
-    	   	0"
+text = "HighScore"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="."]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -140.0
+offset_top = 105.0
+offset_right = 140.0
+offset_bottom = 137.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_xej1i")
+theme_override_font_sizes/font_size = 32
+text = "ERROR"
+horizontal_alignment = 1
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_n74sx")

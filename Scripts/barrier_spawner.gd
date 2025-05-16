@@ -12,11 +12,11 @@ func _ready():
 	timer.timeout.connect(spawn_barrier)
 
 func _process(_delta):
-	if Game.game_over and timer.is_stopped() == false:
+	if game.game_over and timer.is_stopped() == false:
 		timer.stop()
 
 func spawn_barrier():
-	if Game.game_over:
+	if game.game_over:
 		return  # Ne spawn pas si la partie est finie
 	var barrier = barrier_scene.instantiate()
 	barrier.position = Vector2(800, randf_range(-578, -146))
