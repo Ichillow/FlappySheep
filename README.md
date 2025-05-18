@@ -17,14 +17,14 @@ Le but est simple : fais sauter le mouton pour éviter les barrières et atteind
 ## 🚧 Fonctionnalités
 
 - Génération automatique de barrières.
-- Système de score.
+- Gestion de Highscore.
 - Peut être des skins 👀.
 
 ---
 
 ## 🛠️ Développement
 
-Développé avec [Godot Engine](https://godotengine.org/) (version 4.x).  
+Développé avec [Godot Engine](https://godotengine.org/) (version 4.3).  
 Langage : **GDScript**
 
 ---
