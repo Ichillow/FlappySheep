@@ -33,6 +33,7 @@ Langage : **GDScript**
 
 <ul>
 <li><a href=https://nmr9.itch.io/animated-sheep target="_blank">Animated sheep by <strong>NMR9</strong> </a> (avec modification de ma part).</li>
+<li><a href=https://etahoshi.itch.io/minimal-fantasy-gui-by-eta target="_blank">Fantasy Minimal Pixel Art GUI by <strong>Etahoshi</strong> </a> (avec quelque modification).</li>
 </ul>
   
 ---
