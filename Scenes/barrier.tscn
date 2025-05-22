@@ -91,7 +91,7 @@ sources/0 = SubResource("TileSetAtlasSource_4rx0c")
 size = Vector2(21.625, 1405.56)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q27to"]
-size = Vector2(20, 130.5)
+size = Vector2(20, 182)
 
 [node name="barrier" type="StaticBody2D"]
 position = Vector2(514, 24)
@@ -118,7 +118,7 @@ position = Vector2(-0.1875, -0.21875)
 shape = SubResource("RectangleShape2D_1wbmp")
 
 [node name="scoreGate" type="Area2D" parent="."]
-position = Vector2(55, 346)
+position = Vector2(164, 346)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scoreGate"]
 shape = SubResource("RectangleShape2D_q27to")

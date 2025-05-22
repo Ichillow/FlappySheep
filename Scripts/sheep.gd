@@ -7,6 +7,8 @@ const JUMP_VELOCITY = -400.0
 #Onready
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var jump_sound: AudioStreamPlayer = $jumpSound
+
 
 var can_jump: bool = true
 
@@ -30,6 +32,7 @@ func update_animation(jumping : bool) -> void:
 
 func jump() -> void:
 	if Input.is_action_just_pressed("jump") :
+		jump_sound.play()
 		velocity.y = JUMP_VELOCITY
 		update_animation(true)
 	if Input.is_action_just_released("jump") :

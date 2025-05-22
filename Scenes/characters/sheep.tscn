@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqy2b2hlkhsl4"]
+[gd_scene load_steps=9 format=3 uid="uid://bqy2b2hlkhsl4"]
 
 [ext_resource type="Script" path="res://Scripts/sheep.gd" id="1_tfqu4"]
 [ext_resource type="Texture2D" uid="uid://bgn6gr5vfqr3u" path="res://Assets/sheep_assets/sheep_assets_x4.png" id="1_ti7ba"]
+[ext_resource type="AudioStream" uid="uid://bjvl6pnssj32x" path="res://Assets/Audio/JumpSound.wav" id="3_svk02"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iwe08"]
-size = Vector2(64, 52)
+size = Vector2(55, 41)
 
 [sub_resource type="Animation" id="Animation_v3542"]
 length = 0.001
@@ -73,7 +74,7 @@ vframes = 22
 frame = 66
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
+position = Vector2(1.5, 8.5)
 shape = SubResource("RectangleShape2D_iwe08")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -83,3 +84,6 @@ libraries = {
 
 [node name="deathTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="jumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_svk02")

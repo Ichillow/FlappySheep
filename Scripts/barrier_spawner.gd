@@ -19,5 +19,5 @@ func spawn_barrier():
 	if game.game_over:
 		return  # Ne spawn pas si la partie est finie
 	var barrier = barrier_scene.instantiate()
-	barrier.position = Vector2(800, randf_range(-578, -146))
+	barrier.position = Vector2(575	, randf_range(-578, -146))
 	get_parent().add_child(barrier)
