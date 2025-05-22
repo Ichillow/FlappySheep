@@ -21,7 +21,8 @@ func _on_texture_button_play_pressed() -> void:
 func _on_texture_button_option_pressed() -> void:
 	play_sound()
 	await get_tree().create_timer(0.1).timeout
-	print("WIP")
+	get_tree().change_scene_to_file("res://Scenes/UI/option_menu.tscn")  # Change to the options menu scene
+
 
 #Quit Button
 func _on_texture_button_quit_pressed() -> void:
